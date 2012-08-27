@@ -48,7 +48,8 @@ HTML;
       $class = ' class="subtract"';
     }
 
-    $markup .= "<li$class>$line</li>\n";
+    $clean_line = htmlentities(trim($line), ENT_QUOTES);
+    $markup .= "<li$class>$clean_line</li>\n";
   }
   $markup .= "</ul>\n";
 
@@ -66,9 +67,9 @@ HTML;
       font-family: sans-serif;
     }
 
-    #diff ul {
+    #diff ul li {
       font-family: monospace;
-      white-space: nowrap;
+      white-space: pre;
     }
 
     ul, li {
